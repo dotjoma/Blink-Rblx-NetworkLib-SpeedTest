@@ -1,0 +1,33 @@
+option ClientOutput = "Client/client.blink.luau"
+option ServerOutput = "Server/server.blink.luau"
+
+-- Basic hello events for testing
+event HelloEvent {
+    from: Client,
+    type: Reliable,
+    call: SingleSync,
+    data: string
+}
+
+event WelcomeBack {
+    from: Server,
+    type: Reliable,
+    call: SingleSync,
+    data: string
+}
+
+-- Event for requesting object collection
+event RequestCollectObject {
+    from: Client,
+    type: Reliable,
+    call: SingleSync,
+    data: string
+}
+
+-- Event for object collection results
+event ObjectCollected {
+    from: Server,
+    type: Reliable,
+    call: SingleSync,
+    data: string
+}
